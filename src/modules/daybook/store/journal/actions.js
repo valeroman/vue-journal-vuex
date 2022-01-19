@@ -14,7 +14,7 @@ export const loadEntries = async({ commit }) => {
         return
     }
 
-    console.log({ data })
+    // console.log({ data })
 
     const entries = []
     for (let id of Object.keys(data)) {
@@ -23,7 +23,7 @@ export const loadEntries = async({ commit }) => {
             ...data[id] // el valor al que apunta el id
         })
     }
-
+    // console.log(entries)
     commit('setEntries', entries)
 
 }
@@ -37,8 +37,10 @@ export const updateEntry = async({ commit }, entry) => {
     // await journalApi.put(PATH .json, dataToSave)
     await journalApi.put(`/entries/${ entry.id }.json`, dataToSave)
 
+    dataToSave.id = entry.id
+
     // commit de una mutacion => updateEntry
-    commit('updateEntry', {...entry })
+    commit('updateEntry', {...dataToSave })
 }
 
 export const createEntry = async({ commit }, entry) => {

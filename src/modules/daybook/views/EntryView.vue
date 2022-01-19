@@ -74,6 +74,7 @@ import getDayMonthYear from '../helpers/getDayMonthYear'
 import uploadImage from '../helpers/uploadImage'
 
 export default {
+    name: 'EntryView',
     props: {
         id: {
             type: String,
@@ -131,7 +132,7 @@ export default {
         },
         async saveEntry() {
 
-            new Swal({
+            Swal.fire({
                 title: 'Espere por favor',
                 allowOutsideClick: false
             })
@@ -158,7 +159,7 @@ export default {
 
         },
         async onDeleteEntry() {
-
+            
             const { isConfirmed } = await Swal.fire({
                 title: 'Estas seguro?',
                 text: 'Una vez borrado, no se puede recuperar',
@@ -166,8 +167,9 @@ export default {
                 confirmButtonText: 'Si estoy seguro'
             })
 
+
             if (isConfirmed) {
-                new Swal({
+                Swal.fire({
                     title: 'Espere por favor',
                     allowOutsideClick: false
                 })
