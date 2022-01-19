@@ -4,9 +4,9 @@ import cloudinary from 'cloudinary'
 
 
 cloudinary.config({
-    cloud_name: 'dddudqtmm',
-    api_key: '274455614771256',
-    api_secret: 'gGUB0g6AsXALvuYO2VS3v9Yikqw'
+    cloud_name: '',
+    api_key: '',
+    api_secret: ''
 
 })
 
